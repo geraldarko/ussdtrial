@@ -65,11 +65,17 @@ if ($text == "") {
         $response .= "Water level sensor:\n";
         $response .= "0. Back\n";
 
+} else if ($text == "1*0*2"){
+        // User selected option to go back to main menu
+        $response = "CON Welcome to Akuafo, what would you like to check? \n";
+        $response .= "1) Farm Sensor Readings \n";
+        $response .= "2) Irrigation Control";
+
 }   else if ($text == "2*1"){
-        $response = "CON Pump will be turn on(this might take a few seconds)";
+        $response = "END Pump will be turn on(this might take a few seconds)";
 
 }   else if($text == "2*2"){
-        $response = "CON Pump will be turn off(this might take a few seconds)";
+        $response = "END Pump will be turn off(this might take a few seconds)";
 
 }
 
