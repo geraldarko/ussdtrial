@@ -28,9 +28,9 @@ if ($text == "") {
 	$response .= "1. Turn ON \n";
 	$response .= "1. Turn OFF";
 
-}else if ($text == "1*0"){
-	$text == "";
-	break;
+// }else if ($text == "1*0"){
+// 	$text == "";
+// 	break;
 
 }else if ($text == "2*1"){
 	$response = "END Pump will be turn on(this might take a few seconds)";
