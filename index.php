@@ -14,8 +14,8 @@ if ($text == "") {
         
 } else if ($text == "1") {
     // Business logic for first level response
-        $response = "CON Your Farm Readings are\n";
-        $response .= "END Humidity sensor:\n";
+        $response = "END Your Farm Readings are\n";
+        $response .= "Humidity sensor:\n";
         $response .= "Temperature sensor:\n";
         $response .= "Soil moisture sensor:\n";
         $response .= "Water level sensor:\n";
