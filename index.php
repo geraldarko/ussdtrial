@@ -68,6 +68,9 @@ if ($text == "") {
             } else if ($text == "2") {
                 $response = "END Pump will be turned off (this might take a few seconds)";
                 $currentLevel
+            }
+    }
+}
 
 
 // Echo the response back to the API
