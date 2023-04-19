@@ -14,11 +14,11 @@ if ($text == "") {
     
 } else if ($text == "1") {
     // Business logic for first level response
-    $response = "CON Your Farm Status\n";
-	$response .= "Humidity sensor\n";
-	$response .= "Temperature sensor\n";
-	$response .= "Soil moisture sensor\n";
-	$response .= "Water level sensor\n";
+    $response = "CON Your Farm Status are\n";
+	$response .= "Humidity sensor:\n";
+	$response .= "Temperature sensor:\n";
+	$response .= "Soil moisture sensor:\n";
+	$response .= "Water level sensor:\n";
 	$response .= "Press 0 to return to main menu\n";
 
 } else if ($text == "2") {
