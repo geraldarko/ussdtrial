@@ -21,10 +21,6 @@ if ($text == "") {
 	$response .= "\nWater level sensor";
 	$response .= "\nPress 0 to return to main menu";
 
-// }else if ($text == "1*0"){
-// 	$text == "";
-// 	break;
-
 } else if ($text == "2") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
@@ -32,14 +28,15 @@ if ($text == "") {
 	$response .= "1. Turn ON \n";
 	$response .= "1. Turn OFF";
 
-// }else if ($text == "2*1"){
-// 	$response = "END Pump will be turn on(this might take a few seconds)";
-// }else if($text == "2*2"){
-// 	$response = "END Pump will be turn off(this might take a few seconds)";
-// }
+}else if ($text == "1*0"){
+	$text == "";
+	break;
 
-
-
+}else if ($text == "2*1"){
+	$response = "END Pump will be turn on(this might take a few seconds)";
+}else if($text == "2*2"){
+	$response = "END Pump will be turn off(this might take a few seconds)";
+}
 
 }
 
