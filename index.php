@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Akuafo Ghana</title>
+  <title>Day Bootstrap Template - Index</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="images/img/favicon.png" rel="icon">
-  <link href="images/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link
@@ -44,7 +44,7 @@
   <header id="header" class="d-flex align-items-center">
     <div class="container d-flex align-items-center justify-content-between">
 
-      <h1 class="logo"><a href="index.html">Akuafo</a></h1>
+      <h1 class="logo"><a href="index.php">Akuafo</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -65,7 +65,7 @@
     <div class="container position-relative" data-aos="fade-up" data-aos-delay="500">
       <h1>Welcome to Akuafo</h1>
       <h2>Your number one irrigation system in Ghana</h2>
-      <a href="view/login.php" class="btn-get-started scrollto">Get Started</a>
+      <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->
 
@@ -77,7 +77,7 @@
 
         <div class="row">
           <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left">
-            <img src="images/img/iri.jpg" class="img-fluid" alt="">
+            <img src="img/iri.jpg" class="img-fluid" alt="">
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right">
             <h3>Problem and Objective</h3>
@@ -146,7 +146,7 @@
         <div class="row">
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
             <div class="member">
-              <img src="images/img/team/team-1.jpg" alt="">
+              <img src="img/team/team-1.jpg" alt="">
               <h4>Stephane Nwolley</h4>
               <span>Supervisor</span>
               <p>
@@ -164,7 +164,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
             <div class="member">
-              <img src="images/img/team/gerald.jpg" alt="">
+              <img src="img/team/gerald.jpg" alt="">
               <h4>Gerald Darko</h4>
               <!-- <span>Product Manager</span> -->
               <p>
@@ -181,7 +181,7 @@
 
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
             <div class="member">
-              <img src="images/img/team/team-3.jpg" alt="">
+              <img src="assets/img/team/team-3.jpg" alt="">
               <h4>Aaron Adom Malm</h4>
               <!-- <span>CTO</span> -->
               <p>
@@ -241,9 +241,7 @@
     </section><!-- End Contact Section -->
 
   </main><!-- End #main -->
-<br>
-<br>
-<br>
+
 
   <footer id="footer">
     </div>
@@ -277,7 +275,7 @@
   <script src="vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="js/home.js"></script>
+  <script src="js/main.js"></script>
 
 </body>
 
