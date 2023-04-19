@@ -10,7 +10,7 @@ if ($text == "") {
     // This is the first request. Note how we start the response with CON
 	$response = "CON Welcome to Akuafo, what would you like to check? \n";
 	$response .= "1. Farm Sensor Readings \n";
-	$response .= "2. Farm Pump Status";
+	$response .= "2. Irrigation Control";
     
 } else if ($text == "1") {
     // Business logic for first level response
@@ -25,8 +25,8 @@ if ($text == "") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
 	$response = "CON Turn pump on/off \n";
-	$response .= "1. Turn ON \n";
-	$response .= "2. Turn OFF";
+	$response .= "1. Turn On \n";
+	$response .= "2. Turn Off";
 
 // }else if ($text == "1*0"){
 // 	$text == "";
