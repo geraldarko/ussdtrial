@@ -31,33 +31,36 @@ if ($text == "") {
 } else if ($text == "1") {
     // Business logic for first level response
     $response = "CON Your Farm Readings are\n";
-	$response .= "Humidity sensor:\n";
+	$response .= "1. Humidity sensor:\n";
 	$response .= "Temperature sensor:\n";
 	$response .= "Soil moisture sensor:\n";
 	$response .= "Water level sensor:\n";
 	// $response .= "Press 0 to return to main menu\n";
 
-} else if ($text == "2") {
-    // Business logic for first level response
+} else if($text == "1*1") { 
+    // This is a second level response where the user selected 1 in the first instance
+    $accountNumber  = "ACC1001";
+
     // This is a terminal request. Note how we start the response with END
-	$response = "CON Turn pump on/off \n";
-	$response .= "1) Turn On \n";
-	$response .= "2) Turn Off";
+    $response = "END Your account number is ".$accountNumber;
 
-}else if ($text == "2*1"){
-    $response = "END Pump will be turn on(this might take a few seconds)";
+}   else if ($text == "2"){
+        $response = "CON Turn pump on/off \n";
+        $response .= "1. Turn ON \n";
+        $response .= "2. Turn OFF";
 
-}else if($text == "2*2"){
-$response = "END Pump will be turn off(this might take a few seconds)";
+}   else if ($text == "2*1"){
+        $response = "END Pump will be turn on(this might take a few seconds)";
+
+}   else if($text == "2*2"){
+        $response = "END Pump will be turn off(this might take a few seconds)";
+        
 }
 
-// }else if ($text == "1*0"){
-// // 	$text == "";
-// // 	break;
 
-}
 
 // Echo the response back to the API
 header('Content-type: text/plain');
 echo $response;
 ?>
+
