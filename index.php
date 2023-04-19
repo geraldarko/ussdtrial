@@ -32,11 +32,11 @@ if ($text == "") {
 // 	$text == "";
 // 	break;
 
-}else if ($text == "2*1"){
-	$response = "END Pump will be turn on(this might take a few seconds)";
-}else if($text == "2*2"){
-	$response = "END Pump will be turn off(this might take a few seconds)";
-}
+// }else if ($text == "2*1"){
+// 	$response = "END Pump will be turn on(this might take a few seconds)";
+// }else if($text == "2*2"){
+// 	$response = "END Pump will be turn off(this might take a few seconds)";
+// }
 
 }
 
