@@ -1,6 +1,6 @@
 <?php
 
-require_once 'db_cred.php';
+// require_once 'db_cred.php';
 
 // // Create connection
 // $conn = new mysqli($SERVER, $USERNAME, $PASSWD, $DATABASE);
