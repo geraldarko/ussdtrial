@@ -41,7 +41,7 @@ if ($text == "") {
 }   else if ($text == "2"){
         $response = "CON Turn pump on/off \n";
         $response .= "1. Turn ON \n";
-        $response .= "2. Turn OFF";
+        $response .= "2. Turn OFF \n";
         $response .= "0. Back";
 
 } else if ($text == "1*0"){
