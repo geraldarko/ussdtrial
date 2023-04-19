@@ -16,11 +16,11 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 // $password = "";
 // $dbname = "akuafo_db";
 
-
-$servername = "us-cdbr-east-06.cleardb.net";
-$dbname = "heroku_6f21400d1c5e59a";
-$password = "c513e60b";
-$username = "bf2c0c01ffee34"
+require_once("../settings/db_class.php");
+// $servername = "us-cdbr-east-06.cleardb.net";
+// $dbname = "heroku_6f21400d1c5e59a";
+// $password = "c513e60b";
+// $username = "bf2c0c01ffee34"
 
 
 $conn = new mysqli($servername, $username, $password, $dbname); 
