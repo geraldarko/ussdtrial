@@ -51,9 +51,10 @@ if ($text == "") {
 
 } else if ($text == "1*0*2"){
         // User selected option to go back to main menu
-        $response = "CON Welcome to Akuafo, what would you like to check? \n";
-        $response .= "1) Farm Sensor Readings \n";
-        $response .= "2) Irrigation Control";
+        $response = "CON Turn pump on/off \n";
+        $response .= "1. Turn ON \n";
+        $response .= "2. Turn OFF \n";
+        $response .= "0. Back";
 
 }   else if ($text == "2*1"){
         $response = "END Pump will be turn on(this might take a few seconds)";
