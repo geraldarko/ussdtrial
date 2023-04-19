@@ -15,7 +15,7 @@ if ($text == "") {
 } else if ($text == "1") {
     // Business logic for first level response
         $response = "CON Your Farm Readings are\n";
-        $response .= "Humidity sensor:\n";
+        $response .= "END Humidity sensor:\n";
         $response .= "Temperature sensor:\n";
         $response .= "Soil moisture sensor:\n";
         $response .= "Water level sensor:\n";
@@ -28,40 +28,17 @@ if ($text == "") {
         $response .= "2. Turn OFF \n";
         $response .= "0. Back";
 
-} else if ($text == "1*0"){
-    // User selected option to go back to main menu
-        $response = "CON Welcome to Akuafo, what would you like to check? \n";
-        $response .= "1) Farm Sensor Readings \n";
-        $response .= "2) Irrigation Control";
-
 } else if ($text == "2*0"){
     // User selected option to go back to main menu
         $response = "CON Welcome to Akuafo, what would you like to check? \n";
         $response .= "1) Farm Sensor Readings \n";
         $response .= "2) Irrigation Control";
     
-
-} else if ($text == "1*0*1"){
-        $response = "CON Your Farm Readings are\n";
-        $response .= "Humidity sensor:\n";
-        $response .= "Temperature sensor:\n";
-        $response .= "Soil moisture sensor:\n";
-        $response .= "Water level sensor:\n";
-        $response .= "0. Back\n";
-
-} else if ($text == "1*0*2"){
-        // User selected option to go back to main menu
-        $response = "CON Turn pump on/off \n";
-        $response .= "1. Turn ON \n";
-        $response .= "2. Turn OFF \n";
-        $response .= "0. Back";
-
 }   else if ($text == "2*1"){
         $response = "END Pump will be turn on(this might take a few seconds)";
 
 }   else if($text == "2*2"){
         $response = "END Pump will be turn off(this might take a few seconds)";
-
 }
 
 // Echo the response back to the API
