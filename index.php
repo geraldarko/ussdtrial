@@ -1,6 +1,20 @@
-
-
 <?php
+
+require_once 'db_cred.php';
+
+// Create connection
+$conn = new mysqli($SERVER, $USERNAME, $PASSWD, $DATABASE);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Your PHP code here for executing database queries
+
+// Close connection
+$conn->close();
+
 
 // Read the variables sent via POST from our API
 $sessionId   = $_POST["sessionId"];
