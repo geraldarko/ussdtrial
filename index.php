@@ -8,18 +8,18 @@ $text        = $_POST["text"];
 
 if ($text == "") {
     // This is the first request. Note how we start the response with CON
-	$response = "CON What would you want to check? \n";
+	$response = "CON Welcome to Akuafo, what would you like to check? \n";
 	$response .= "1. Farm Sensor Readings \n";
 	$response .= "2. Farm Pump Status";
     
 } else if ($text == "1") {
     // Business logic for first level response
-    $response = "CON Farm Status\n \n";
-	$response .= "Humidity sensor";
-	$response .= "\nTemperature sensor";
-	$response .= "\nSoil moisture sensor";
-	$response .= "\nWater level sensor";
-	$response .= "\nPress 0 to return to main menu";
+    $response = "CON Your Farm Status\n";
+	$response .= "Humidity sensor\n";
+	$response .= "Temperature sensor\n";
+	$response .= "Soil moisture sensor\n";
+	$response .= "Water level sensor\n";
+	$response .= "Press 0 to return to main menu\n";
 
 } else if ($text == "2") {
     // Business logic for first level response
