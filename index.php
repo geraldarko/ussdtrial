@@ -50,10 +50,10 @@ if ($text == "") {
         $response .= "2) Irrigation Control";
 
 }   else if ($text == "2*1"){
-        $response = "END Pump will be turn on(this might take a few seconds)";
+        $response = "CON Pump will be turn on(this might take a few seconds)";
 
 }   else if($text == "2*2"){
-        $response = "END Pump will be turn off(this might take a few seconds)";
+        $response = "CON Pump will be turn off(this might take a few seconds)";
 
 }
 
