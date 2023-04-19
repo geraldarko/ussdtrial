@@ -3,6 +3,8 @@
 //include_once ("../controllers/IOT.php");
 //  23wsinclude_once("../classes/customer_class.php");
 
+require_once("../settings/db_class.php");
+
 // Initialize the session
 session_start();
  
@@ -16,7 +18,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 // $password = "";
 // $dbname = "akuafo_db";
 
-require_once("../settings/db_class.php");
 // $servername = "us-cdbr-east-06.cleardb.net";
 // $dbname = "heroku_6f21400d1c5e59a";
 // $password = "c513e60b";
