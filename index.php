@@ -8,26 +8,36 @@ $text        = $_POST["text"];
 
 if ($text == "") {
     // This is the first request. Note how we start the response with CON
-    $response  = "CON What would you want to check \n";
-    $response .= "1. My Account \n";
-    $response .= "2. My phone number";
-
+	$response = "CON What would you want to check? \n";
+	$response .= "1. Farm Sensor Readings \n";
+	$response .= "2. Farm Pump Status";
+    
 } else if ($text == "1") {
     // Business logic for first level response
-    $response = "CON Choose account information you want to view \n";
-    $response .= "1. Account number \n";
+    $response = "CON Farm Status\n \n";
+	$response .= "Humidity sensor".$humidity;
+	$response .= "\nTemperature sensor".$temperature;
+	$response .= "\nSoil moisture sensor".$soilmoisture;
+	$response .= "\nWater level sensor".$waterlevel;
+	$response .= "\nPress 0 to return to main menu";
+
+}else if ($text == "1*0"){
+	$text == "";
+	break;
 
 } else if ($text == "2") {
     // Business logic for first level response
     // This is a terminal request. Note how we start the response with END
-    $response = "END Your phone number is ".$phoneNumber;
+	$response = "CON Turn pump on/off \n";
+	$response .= "1. Turn ON \n";
+	$response .= "1. Turn OFF";
 
-} else if($text == "1*1") { 
-    // This is a second level response where the user selected 1 in the first instance
-    $accountNumber  = "ACC1001";
+}else if ($text == "2*1"){
+	$response = "END Pump will be turn on(this might take a few seconds)";
+}else if($text == "2*2"){
+	$response = "END Pump will be turn off(this might take a few seconds)";
+}
 
-    // This is a terminal request. Note how we start the response with END
-    $response = "END Your account number is ".$accountNumber;
 
 }
 
