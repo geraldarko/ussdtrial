@@ -12,23 +12,23 @@ if (isset($_POST["submit"])) {
     $contact = $_POST['contact'];
 
     //Email Verification
-    // $apiKey = '79905cbcf44b8c0f3f8b0d6f230075f9a011ce3ff273bc4e4430ec2d1753';
-    // $url = 'https://api.quickemailverification.com/v1/verify?&apikey='.$apiKey.'&email='.$email;
+    $apiKey = '79905cbcf44b8c0f3f8b0d6f230075f9a011ce3ff273bc4e4430ec2d1753';
+    $url = 'https://api.quickemailverification.com/v1/verify?&apikey='.$apiKey.'&email='.$email;
 
-    // $ch = curl_init($url);
-    // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    // $response = curl_exec($ch);
-    // curl_close($ch);
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
+    curl_close($ch);
 
-    // $result = json_decode($response);
+    $result = json_decode($response);
 
-    // if ($result->status == 'valid') {
-    //     echo 'Email is valid!';
-    // } elseif ($result->status == 'invalid') {
-    //     echo 'Email is invalid.';
-    // } else {
-    //     echo 'Unable to verify email.';
-    // }
+    if ($result->status == 'valid') {
+        echo 'Email is valid!';
+    } elseif ($result->status == 'invalid') {
+        echo 'Email is invalid.';
+    } else {
+        echo 'Unable to verify email.';
+    }
 
     //regex password
     $pattern = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/";
@@ -59,7 +59,7 @@ if (isset($_POST["submit"])) {
 
     if (preg_match($pattern, $password) != 1) {
         array_push($errors, "Password must contain at least one number and one uppercase 
-        and lowercase letter, and at least 6 or more characters"); 
+        and lowercase letter, a symbol and at least 6 or more characters"); 
     }
 
     if(strlen($contact) != 10){
