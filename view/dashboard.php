@@ -1,113 +1,26 @@
-  <!-- Template Citation
- Circl creative admin theme
- latest Bootstrap 5 Framework.
--->
 
-<?php
-//include_once ("../controllers/IOT.php");
-//  23wsinclude_once("../classes/customer_class.php");
-
-// Initialize the session
-session_start();
- 
-// Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
-    exit;
+<?php require_once "controllerUserData.php"; ?>
+<?php 
+$email = $_SESSION['email'];
+$password = $_SESSION['password'];
+if($email != false && $password != false){
+    $sql = "SELECT * FROM usertable WHERE email = '$email'";
+    $run_Sql = mysqli_query($con, $sql);
+    if($run_Sql){
+        $fetch_info = mysqli_fetch_assoc($run_Sql);
+        $status = $fetch_info['status'];
+        $code = $fetch_info['code'];
+        if($status == "verified"){
+            if($code != 0){
+                header('Location: reset-code.php');
+            }
+        }else{
+            header('Location: user-otp.php');
+        }
+    }
+}else{
+    header('Location: login.php');
 }
-// $servername = "localhost";
-// $username = "root";
-// $password = "";
-// $dbname = "akuafo_db";
-
-$servername = "us-cdbr-east-06.cleardb.net";
-$username = "bf2c0c01ffee34";
-$password = "c513e60b";
-$dbname = "heroku_6f21400d1c5e59a";
-
-$conn = new mysqli($servername, $username, $password, $dbname); 
-$sql="SELECT * FROM sensor_data ORDER BY SensorDataId DESC LIMIT 1";
-$result= mysqli_query($conn,$sql);
-//  echo "HERE";
-
-$row=mysqli_fetch_assoc($result);
-
-$Time=$row['Date'];
-$SensorDataId=$row['SensorDataId'];
-$humidity=$row['humidity'];
-$temperature=$row['temperature'];
-$soilmoisture=$row['soilmoisture'];
-$waterlevel=$row['waterlevel'];
-
-// Query database for soil moisture data
-$sql = "SELECT SensorDataId, soilmoisture FROM sensor_data";
-$result = mysqli_query($conn, $sql);
-
-// Create array to hold data for soil moisture graph
-$soil_moisture_data = array();
-while($row = mysqli_fetch_assoc($result)) {
-    $soil_moisture_data[] = $row;
-}
-
-// Convert soil moisture data to JSON format
-$json_soil_moisture_data = json_encode($soil_moisture_data);
-
-// Query database for temperature data
-$sql = "SELECT SensorDataId, temperature FROM sensor_data";
-$result = mysqli_query($conn, $sql);
-
-// Create array to hold data for temperature graph
-$temperature_data = array();
-while($row = mysqli_fetch_assoc($result)) {
-    $temperature_data[] = $row;
-}
-
-// Convert temperature data to JSON format
-$json_temperature_data = json_encode($temperature_data);
-
-// Query database for water level data
-$sql = "SELECT SensorDataId, waterlevel FROM sensor_data";
-$result = mysqli_query($conn, $sql);
-
-// Create array to hold data for water level graph
-$water_level_data = array();
-while($row = mysqli_fetch_assoc($result)) {
-    $water_level_data[] = $row;
-}
-
-// Convert water level data to JSON format
-$json_water_level_data = json_encode($water_level_data);
-
-// Query database for humidity data
-$sql = "SELECT SensorDataId, humidity FROM sensor_data";
-$result = mysqli_query($conn, $sql);
-
-// Create array to hold data for humidity graph
-$humidity_data = array();
-while($row = mysqli_fetch_assoc($result)) {
-    $humidity_data[] = $row;
-}
-
-// Convert humidity data to JSON format
-$json_humidity_data = json_encode($humidity_data);
-
-// Close database connection
-mysqli_close($conn);
-
-// Check the soil moisture level
-// if ($soilmoisture < 20) {
-//     $message = "Warning: Soil moisture level is low!";
-//     $status = "danger";
-// } else if ($soilmoisture > 80) {
-//     $message = "Warning: Soil moisture level is high!";
-//     $status = "warning";
-// } else {
-//     $message = "Soil moisture level is normal";
-//     $status = "success";
-// }
-
-// Display the notification
-// echo '<div class="alert alert-' . $status . '">' . $message . '</div>';
 ?>
 
 
@@ -197,7 +110,7 @@ mysqli_close($conn);
                     <a href="farmrecordings.php"><i data-feather="inbox"></i>Farm Recordings</a>
                   </li>
                   <li>
-                    <a href="controlsystem.php"><i data-feather="calendar"></i>Control System</a>
+                    <a href="../pump/esp-outputs.php"><i data-feather="calendar"></i>Control System</a>
                   </li>
                   <li>
                     <a href="history.php"><i data-feather="clock"></i>Archives</a>

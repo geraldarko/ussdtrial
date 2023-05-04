@@ -185,7 +185,7 @@
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in">
             <div class="member">
               <img src="index_assets/img/team/aaron.png" alt="">
-              <h4>Aaron Adom Malm</h4>
+              <h4>Aaron Adom-Malm</h4>
               <!-- <span>CTO</span> -->
               <p>
                 <!-- Voluptas necessitatibus occaecati quia. Earum totam consequuntur qui porro et laborum toro des clara -->
@@ -264,7 +264,6 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/day-multipurpose-html-template-for-free/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>
     </div>
   </footer><!-- End Footer -->

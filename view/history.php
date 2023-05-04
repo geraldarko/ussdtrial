@@ -90,7 +90,7 @@ include_once ("../controllers/IOT.php");
           <a href="farmrecordings.php"><i data-feather="inbox"></i>Farm Recordings</a>
         </li>
         <li>
-          <a href="controlsystem.php"><i data-feather="calendar"></i>Control System</a>
+          <a href="../pump/esp-outputs.php"><i data-feather="calendar"></i>Control System</a>
         </li>
         <li>
         <li class="active-page">
