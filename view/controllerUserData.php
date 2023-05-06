@@ -7,6 +7,14 @@ $errors = array();
 
 include_once ("../controllers/IOT.php");
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+set_include_path('../');
+require_once('php-mailer/src/Exception.php');
+require_once('php-mailer/src/PHPMailer.php');
+require_once('php-mailer/src/SMTP.php');
 
 $servername = "localhost";
 $username = "root";
@@ -105,10 +113,41 @@ if(isset($_POST['signup'])){
                         values('$name', '$email', '$encpass', '$code', '$status')";
         $data_check = mysqli_query($con, $insert_data);
         if($data_check){
-            $subject = "Email Verification Code";
-            $message = "Your verification code is $code";
-            $sender = "From: aaronyebuah1234@gmail.com";
-            if(mail($email, $subject, $message, $sender)){
+            $subject = "Email Verification Code - AKUAFO";
+            $message = "Your verification code is <br><strong>$code</strong>";
+            $sender = "aaronyebuah1234@gmail.com";
+            // $sender = "From: aaronyebuah1234@gmail.com";
+
+            $MAIL_HOST = "smtp.gmail.com";
+            $MAIL_PORT = 465;
+            // $MAIL_USERNAME = "your.email@gmail.com";        // change username to your gmail
+            // $MAIL_PASSWORD = "yourauthkey";                // change password to your given key
+            $MAIL_USERNAME = "dugu.ghoxef123@gmail.com";
+            $MAIL_PASSWORD = "jtapyevaaytoyvi";                 // +a
+            $MAIL_ENCRYPTION = "ssl";
+
+            // Php mailer smtp config
+            $mail = new PHPMailer(true);
+            $mail->isSMTP(); //Send using SMTP
+            // $mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
+            $mail->SMTPDebug = 3;
+            $mail->SMTPAuth = true; //Enable SMTP authentication
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Host = $MAIL_HOST; //Set the SMTP server to send through
+            $mail->Username = $MAIL_USERNAME; //SMTP username
+            $mail->Password = $MAIL_PASSWORD;
+            $mail->Port = $MAIL_PORT;
+            $mail->setFrom($sender);
+            $mail->addAddress($email);
+            // $mail->addAddress($MAIL_USERNAME);           // To receive copy of email in your gmailinbox
+            // $mail->addAddress('your.personal@emailaddress.com');           // Add any email here to receive copy of email
+            $mail->Subject = $subject;
+            $mail->isHTML(true);
+            $mail->Body = $message;
+        
+            
+            if($mail->send()){
+            // if(mail($email, $subject, $message, $sender)){
                 $info = "We've sent a verification code to your email - $email";
                 $_SESSION['info'] = $info;
                 $_SESSION['email'] = $email;
