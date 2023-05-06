@@ -120,10 +120,10 @@ if(isset($_POST['signup'])){
 
             $MAIL_HOST = "smtp.gmail.com";
             $MAIL_PORT = 465;
-            // $MAIL_USERNAME = "your.email@gmail.com";        // change username to your gmail
-            // $MAIL_PASSWORD = "yourauthkey";                // change password to your given key
-            $MAIL_USERNAME = "dugu.ghoxef123@gmail.com";
-            $MAIL_PASSWORD = "jtapyevaaytoyvi";                 // +a
+            $MAIL_USERNAME = "your.email@gmail.com";        // change username to your gmail
+            $MAIL_PASSWORD = "yourauthkey";                // change password to your given key
+            // $MAIL_USERNAME = "dugu.ghoxef123@gmail.com";
+            // $MAIL_PASSWORD = "";                 // +a
             $MAIL_ENCRYPTION = "ssl";
 
             // Php mailer smtp config
